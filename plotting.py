@@ -61,28 +61,29 @@ import numpy as np
 # vals2 = range(len(test_acc2))
 
 #SA
-test_acc = np.load("npData/20190302-182640-SA-NN-train-geo-4000i-40a.npy")
-valid_acc = np.load("npData/20190302-182640-SA-NN-valid-geo-4000i-40a.npy")
-vals = range(len(test_acc))
-
-test_acc2 = np.load("npData/20190302-185749-SA-NN-train-arith-4000i-40a.npy")
-valid_acc2 = np.load("npData/20190302-185749-SA-NN-valid-arith-4000i-40a.npy")
-vals2 = range(len(test_acc2))
-
-#GA
-# s1 = "20190302-194219-GA-NN-test-400p-10a-100i.npy"
-# s2 = "20190302-194219-GA-NN-valid-400p-10a-100i.npy"
-
-# test_acc = np.load("npData/" + s1)
-# valid_acc = np.load("npData/" + s2)
+# test_acc = np.load("npData/20190302-182640-SA-NN-train-geo-4000i-40a.npy")
+# valid_acc = np.load("npData/20190302-182640-SA-NN-valid-geo-4000i-40a.npy")
 # vals = range(len(test_acc))
 
-# s1 = "20190302-194230-GA-NN-valid-800-10a-100i.npy"
-# s2 = "20190302-194230-GA-NN-test-800-10a-100i.npy"
-
-# test_acc2 = np.load("npData/" + s1)
-# valid_acc2 = np.load("npData/" + s2)
+# test_acc2 = np.load("npData/20190302-185749-SA-NN-train-arith-4000i-40a.npy")
+# valid_acc2 = np.load("npData/20190302-185749-SA-NN-valid-arith-4000i-40a.npy")
 # vals2 = range(len(test_acc2))
+
+#GA
+s1 = "20190302-194219-GA-NN-test-400p-10a-100i.npy"
+s2 = "20190302-194219-GA-NN-valid-400p-10a-100i.npy"
+
+test_acc = np.load("npData/" + s1)
+valid_acc = np.load("npData/" + s2)
+vals = range(len(test_acc))
+
+s1 = "20190302-194230-GA-NN-test-800-10a-100i.npy"
+s2 = "20190302-194230-GA-NN-valid-800-10a-100i.npy"
+
+
+test_acc2 = np.load("npData/" + s1)
+valid_acc2 = np.load("npData/" + s2)
+vals2 = range(len(test_acc2))
 
 
 ax = plt.subplot(121)
@@ -108,5 +109,5 @@ plt.legend()
 
 print(np.max(test_acc))
 print(np.max(test_acc2))
-plt.savefig("../tex/figures/SA-NN.pdf")
+plt.savefig("../tex/figures/GA-NN.pdf")
 plt.show()

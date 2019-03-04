@@ -1104,30 +1104,6 @@ class TwoEnds():
         return self.prob_type
 
 class Chunk():
-    def __init__(self, mod):
-        self.prob_type = 'discrete'
-        self.mod = mod
-
-    def evaluate(self, state):
-        print('eval')
-        fitness = 0
-        for i in range(0, len(state), self.mod):
-            chunk = state[i: i + self.mod]
-            print(chunk)
-            if (np.sum(chunk) == self.mod):
-                chunk += self.mod * 10
-            else:
-                chunk += np.sum(chunk)
-        # fitness = np.sum(state) / self.mod
-
-        print(fitness)
-        return fitness+ 1
-
-    def get_prob_type(self):
-        return self.prob_type
-
-
-class MaxOnesPenalty2():
     def __init__(self, mod, T=10):
         self.prob_type = 'discrete'
         self.mod = mod
@@ -1223,7 +1199,7 @@ class PatternFind:
     def get_prob_type(self):
         return self.prob_type
 
-class ParityPalindrome:
+class ParityHalfString:
     """Fitness function for Max-k color optimization problem. Evaluates the
     fitness of an n-dimensional state vector
     :math:`x = [x_{0}, x_{1}, \\ldots, x_{n-1}]`, where :math:`x_{i}`
